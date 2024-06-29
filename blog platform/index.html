@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - My Blog</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa; /* Updated background color */
+        }R
+
+        header {
+            background-color: #00796b; /* Updated background color */
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ffffff; /* Updated text color for contrast */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ffffff; /* Updated text color for contrast */
+            font-weight: bold;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search input {
+            padding: 0.5rem;
+            border: 1px solid #004d40; /* Updated border color */
+            border-radius: 5px;
+        }
+
+        .search button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: #004d40; /* Updated button background color */
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .blog-page {
+            background-color: #ffffff; /* Background color for the blog page */
+            padding: 2rem;
+            margin-top: 2rem;
+            border-radius: 5px;
+        }
+
+        .blog-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .article-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .article {
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .article img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .article .description {
+            padding: 1rem;
+        }
+
+        .article h3 {
+            margin-top: 0;
+        }
+
+        .article p {
+            margin-bottom: 0;
+        }
+
+        .comment-section {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-top: 1px solid #cccccc;
+            background-color: #f1f8e9; /* Updated background color */
+        }
+
+        .comment-section h4 {
+            margin: 0 0 0.5rem;
+        }
+
+        .comment {
+            margin-bottom: 1rem;
+        }
+
+        .comment input, .comment textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid #009688; /* Updated border color */
+            border-radius: 5px;
+        }
+
+        .comment button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: #00796b; /* Updated button background color */
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                My Blog
+            </div>
+            <nav>
+                <a href="https://example.com/home">Home</a>
+                <a href="https://example.com/categories">Categories</a>
+                <a href="https://example.com/about">About</a>
+                <a href="https://example.com/contact">Contact</a>
+            </nav>
+            <div class="search">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button onclick="searchArticles()">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <main
+        <div class="container blog-page">
+            <h2 class="blog-title">Latest Articles</h2>
+
+            <div class="article-list" id="articleList">
+                <div class="article" data-name="The Joy of Coding">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSbJCLDvF4vpioP26C7WXkNS5v4pQTmQoAUA&" alt="The Joy of Coding">
+                    <div class="description">
+                        <h3>The Joy of Coding</h3>
+                        <p>Discover the excitement and satisfaction of coding. Learn about the creative problem-solving aspects and how coding can be a fun and rewarding experience.</p>
+                    </div>
+                    <div class="comment-section">
+                        <h4>Comments</h4>
+                        <div class="comment">
+                            <input type="text" placeholder="Name">
+                            <textarea rows="3" placeholder="Add a comment..."></textarea>
+                            <button>Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="article" data-name="Exploring the Mountains">
+                    <img src="https://media.istockphoto.com/id/1189969126/photo/group-of-hikers-walks-in-mountains-at-sunset.jpg?s=612x612&w=0&k=20&c=YlJOZLmELRF0HaEr1Xv4-Uae_VN4vnB8XnE99hGD3gQ=" alt="Exploring the Mountains">
+                    <div class="description">
+                        <h3>Exploring the Mountains</h3>
+                        <p>Explore the beauty and challenges of mountain environments. This article covers everything from breathtaking views to the physical demands of mountain adventures.</p>
+                    </div>
+                    <div class="comment-section">
+                        <h4>Comments</h4>
+                        <div class="comment">
+                            <input type="text" placeholder="Name">
+                            <textarea rows="3" placeholder="Add a comment..."></textarea>
+                            <button>Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="article" data-name="Healthy Eating Tips">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_vQ-JRkPyuIrLPV_CEbDP3fhm1SuudqsRiA&s" alt="Healthy Eating Tips">
+                    <div class="description">
+                        <h3>Healthy Eating Tips</h3>
+                        <p>Get practical advice on maintaining a healthy diet. This article offers tips on nutritious food choices, meal planning, and the benefits of healthy eating habits.</p>
+                    </div>
+                    <div class="comment-section">
+                        <h4>Comments</h4>
+                        <div class="comment">
+                            <input type="text" placeholder="Name">
+                            <textarea rows="3" placeholder="Add a comment..."></textarea>
+                            <button>Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="article" data-name="Traveling the World">
+                    <img src="https://media.istockphoto.com/id/469235498/vector/illustration-of-flat-design-travel-composition-with-famous-world-landmarks.jpg?s=612x612&w=0&k=20&c=laJxuIadz2BJHCLZB1lMyC29fiKAHA6sd3Xamk1hTUc=" alt="Traveling the World">
+                    <div class="description">
+                        <h3>Traveling the World</h3>
+                        <p>Experience the wonders of global travel. This article discusses diverse cultures, must-see destinations, and tips for making the most of your travel experiences.</p>
+                    </div>
+                    <div class="comment-section">
+                        <h4>Comments</h4>
+                        <div class="comment">
+                            <input type="text" placeholder="Name">
+                            <textarea rows="3" placeholder="Add a comment..."></textarea>
+                            <button>Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="article" data-name="Understanding Climate Change">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0YFfRe5MSvvnY09fK7ZzoWP0FOQXqNKF9Eg&s" alt="Understanding Climate Change">
+                    <div class="description">
+                        <h3>Understanding Climate Change</h3>
+                        <p>Climate change is one of the most pressing issues of our time. This article delves into the science behind climate change, its impacts on our planet, and the actions we can take to mitigate its effects. Discover the causes, consequences, and potential solutions to one of the greatest challenges facing humanity.</p>
+                    </div>
+                    <div class="comment-section">
+                        <h4>Comments</h4>
+                        <div class="comment">
+                            <input type="text" placeholder="Name">
+                            <textarea rows="3" placeholder="Add a comment..."></textarea>
+                            <button>Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function searchArticles() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const articles = document.querySelectorAll('.article');
+            articles.forEach(article => {
+                const name = article.getAttribute('data-name').toLowerCase();
+                if (name.includes(input)) {
+                    article.style.display = 'block';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
